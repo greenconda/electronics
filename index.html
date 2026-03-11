@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electricity & Circuits Intuition Roadmap</title>
+<title>Electricity & Circuit Intuition Mastery Roadmap</title>
 <style>
 :root{
 --bg:#0f172a;
@@ -11,29 +11,30 @@
 --text:#e5e7eb;
 --accent:#60a5fa;
 }
+
 body{
 margin:0;
 font-family:system-ui,Arial;
 background:var(--bg);
 color:var(--text);
-line-height:1.6;
+line-height:1.7;
 padding:40px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
 }
 
 h1,h2,h3{
 color:white;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-}
-
 .card{
 background:var(--card);
-padding:24px;
+padding:26px;
 border-radius:14px;
-margin-top:20px;
+margin-top:22px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
@@ -41,10 +42,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.4);
 background:#1e293b;
 padding:24px;
 border-radius:14px;
-}
-
-.card h3{
-margin-top:0;
 }
 
 a{
@@ -63,7 +60,7 @@ border:none;
 padding:10px 16px;
 border-radius:8px;
 cursor:pointer;
-margin-top:10px;
+margin-top:12px;
 }
 
 button:hover{
@@ -87,6 +84,11 @@ margin-top:80px;
 opacity:0.7;
 font-size:0.9rem;
 }
+
+p{
+margin:10px 0;
+}
+
 </style>
 
 <script>
@@ -101,21 +103,33 @@ el.classList.toggle("hidden")
 <body>
 <div class="container">
 
-<h1>Electricity & Circuits Intuition Roadmap</h1>
+<h1>Electricity & Circuit Intuition Mastery Roadmap</h1>
+
 <p>
-This page is a curated roadmap for learning electricity and circuits deeply through intuition, experiments and thought experiments. Instead of only memorizing formulas, the resources here focus on understanding why circuits behave the way they do.
+This page is a curated roadmap for building deep intuition about electricity, circuits and electronics. 
+The goal is not just to learn formulas like Ohm's Law or Kirchhoff's Laws, but to develop the kind of mental models engineers use to reason about circuits quickly.
 </p>
+
+<p>
+The resources below were chosen because they emphasize <b>physical intuition, thought experiments, and real engineering reasoning</b>. Many courses teach circuits mechanically, but these sources teach how to think like an electrical engineer.
+</p>
+
 
 <div class="order">
 <h2>Suggested Learning Order</h2>
+
+<p>This order gradually builds intuition from visual experimentation → engineering abstraction → physical theory → real electronics design.</p>
+
 <ol>
-<li>Play with circuits in Falstad simulator</li>
-<li>MIT 6.002 Circuits and Electronics</li>
-<li>MIT 8.02 Electricity and Magnetism</li>
-<li>The Art of Electronics</li>
-<li>Learning the Art of Electronics (hands-on)</li>
-<li>AlphaPhoenix & Ben Eater videos</li>
-<li>Feynman Lectures on Physics</li>
+<li><b>Falstad Circuit Simulator</b> — develop visual intuition about current and voltage.</li>
+<li><b>MIT 6.002 Circuits and Electronics</b> — learn circuit reasoning tools.</li>
+<li><b>MIT 8.02 Electricity and Magnetism</b> — understand physical laws behind circuits.</li>
+<li><b>The Art of Electronics</b> — learn how real engineers think about circuits.</li>
+<li><b>Learning the Art of Electronics</b> — build circuits and develop intuition through experiments.</li>
+<li><b>MIT 6.01 Introduction to EECS</b> — connect circuits to systems like motors, sensors and robotics.</li>
+<li><b>Thinking Physics</b> — deepen conceptual intuition with thought experiments.</li>
+<li><b>AlphaPhoenix / Ben Eater / Walter Lewin</b> — visual demonstrations and practical insights.</li>
+<li><b>Feynman Lectures on Physics</b> — the deepest conceptual understanding of electromagnetism.</li>
 </ol>
 </div>
 
@@ -124,27 +138,72 @@ This page is a curated roadmap for learning electricity and circuits deeply thro
 
 <div class="card">
 <h3>Falstad Circuit Simulator</h3>
+
 <p>
-One of the best tools for developing circuit intuition. You can build circuits and literally see current flow and voltages update in real time.
+Falstad is one of the best tools for developing intuition about circuits because it allows you to <b>see current flow and voltages visually</b>.
 </p>
+
+<p>
+Many beginners struggle with concepts like parallel resistors or Kirchhoff's laws because the current paths are invisible. Falstad solves this by animating electron flow and voltage levels in real time.
+</p>
+
+<p>
+This makes it perfect for experiments like:</p>
+
+<ul>
+<li>Understanding why parallel resistors reduce total resistance</li>
+<li>Seeing current split across multiple paths</li>
+<li>Exploring capacitor charging</li>
+<li>Testing weird thought experiments</li>
+</ul>
+
 <a href="https://falstad.com/circuit/" target="_blank">Open Simulator</a>
+
 </div>
+
 
 <div class="card">
 <h3>LTspice</h3>
+
 <p>
-A professional circuit simulator used by engineers. Excellent for testing real analog circuits, amplifiers and transient behavior.
+LTspice is a professional circuit simulation tool used by real engineers.
 </p>
+
+<p>
+While Falstad builds intuition visually, LTspice allows you to simulate complex real-world electronics like amplifiers, filters and power circuits.
+</p>
+
 <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" target="_blank">Download</a>
+
 </div>
 
 
-<h2>Core Courses</h2>
+<h2>Core Circuit Courses</h2>
 
 <div class="card">
-<h3>MIT 6.002 – Circuits and Electronics</h3>
+<h3>MIT 6.002 — Circuits and Electronics</h3>
+
 <p>
-MIT's foundational electrical engineering course. It teaches abstraction, Kirchhoff laws, nodal analysis and circuit reasoning.
+This is MIT's foundational electrical engineering course and one of the best introductions to circuit reasoning ever created.
+</p>
+
+<p>
+The course introduces the key abstraction used in electrical engineering: the <b>lumped circuit model</b>. Real physical systems are extremely complex, but engineers simplify them into nodes, resistors, capacitors and sources.
+</p>
+
+<p>
+The course teaches powerful reasoning tools including:</p>
+
+<ul>
+<li>Kirchhoff's Current Law (current conservation)</li>
+<li>Kirchhoff's Voltage Law (energy conservation)</li>
+<li>Nodal analysis</li>
+<li>Thevenin and Norton equivalents</li>
+<li>Sanity checks for circuit solutions</li>
+</ul>
+
+<p>
+These tools allow engineers to analyze complex circuits quickly and develop the kind of intuition that lets them estimate answers before solving equations.
 </p>
 
 <button onclick="toggle('mit6002')">Show Sample Lecture</button>
@@ -154,12 +213,30 @@ MIT's foundational electrical engineering course. It teaches abstraction, Kirchh
 </div>
 
 <a href="https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/" target="_blank">Course Page</a>
+
 </div>
 
+
 <div class="card">
-<h3>MIT 8.02 – Electricity and Magnetism</h3>
+<h3>MIT 8.02 — Electricity and Magnetism</h3>
+
 <p>
-Explains the physics behind circuits: electric fields, potentials, and electromagnetic energy flow.
+While 6.002 teaches circuit analysis, MIT 8.02 explains the <b>physical reality behind electricity</b>.
+</p>
+
+<p>
+It explores ideas such as:</p>
+
+<ul>
+<li>Electric fields</li>
+<li>Potential energy</li>
+<li>Capacitance</li>
+<li>Magnetic fields</li>
+<li>Electromagnetic waves</li>
+</ul>
+
+<p>
+Understanding these concepts reveals why circuit laws work. For example, it explains how energy actually travels in electromagnetic fields around wires rather than inside them.
 </p>
 
 <button onclick="toggle('mit802')">Show Lecture</button>
@@ -169,39 +246,131 @@ Explains the physics behind circuits: electric fields, potentials, and electroma
 </div>
 
 <a href="https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2007/" target="_blank">Course Page</a>
+
 </div>
 
 
-<h2>Books</h2>
+<div class="card">
+<h3>MIT 6.01 — Introduction to EECS</h3>
+
+<p>
+MIT 6.01 is unique because it connects circuits with real engineering systems like robots and control systems.
+</p>
+
+<p>
+Instead of treating circuits in isolation, it shows how electrical systems interact with the physical world through sensors, actuators and feedback systems.
+</p>
+
+<p>
+Topics include:</p>
+
+<ul>
+<li>Modeling electrical systems</li>
+<li>Sensors and motors</li>
+<li>Control systems</li>
+<li>Signal flow</li>
+</ul>
+
+<p>
+This course helps bridge the gap between circuit theory and practical engineering applications such as embedded systems and robotics.
+</p>
+
+<a href="https://ocw.mit.edu/courses/6-01sc-introduction-to-electrical-engineering-and-computer-science-i-spring-2011/" target="_blank">Course Page</a>
+
+</div>
+
+
+<h2>Books That Build Deep Intuition</h2>
 
 <div class="card">
 <h3>The Art of Electronics</h3>
+
 <p>
-Considered the best electronics book ever written. Instead of only theory it explains how circuits actually behave in the real world and how engineers think when designing them.
+Often considered the best electronics book ever written.
 </p>
+
+<p>
+Unlike traditional textbooks, it focuses on how real engineers reason about circuits. It emphasizes approximations, intuition and practical design decisions rather than purely theoretical derivations.
+</p>
+
+<p>
+The book teaches questions engineers constantly ask themselves:</p>
+
+<ul>
+<li>What happens if this resistor becomes very large?</li>
+<li>What if this node is shorted?</li>
+<li>How does current actually distribute?</li>
+</ul>
+
+<p>
+These kinds of questions build the type of mental models that allow engineers to quickly understand complex circuits.
+</p>
+
 </div>
+
 
 <div class="card">
 <h3>Learning the Art of Electronics</h3>
+
 <p>
-A hands-on lab book with experiments that build intuition by actually building circuits and measuring behavior.
+This is a hands-on laboratory companion to The Art of Electronics.
 </p>
+
+<p>
+Instead of just reading theory, it guides you through building real circuits and measuring their behavior. These experiments reveal the non-ideal behaviors that textbooks often ignore, such as noise, parasitic capacitance and component tolerances.
+</p>
+
 </div>
+
+
+<div class="card">
+<h3>Thinking Physics</h3>
+
+<p>
+Thinking Physics is one of the best books for developing conceptual intuition in physics.
+</p>
+
+<p>
+Instead of equations, it teaches physics through puzzles and thought experiments. Each chapter challenges you to reason about physical systems using logic and mental models.
+</p>
+
+<p>
+This style of thinking is extremely valuable for engineers because it trains the brain to analyze unfamiliar situations using first principles rather than memorized formulas.
+</p>
+
+</div>
+
 
 <div class="card">
 <h3>The Feynman Lectures on Physics</h3>
+
 <p>
-Richard Feynman's legendary lectures give deep conceptual understanding of electromagnetism and energy flow in circuits.
+Richard Feynman's lectures provide one of the deepest conceptual explanations of electromagnetism ever recorded.
 </p>
+
+<p>
+He explains subtle ideas such as:</p>
+
+<ul>
+<li>How energy moves through electromagnetic fields</li>
+<li>Why conductors behave the way they do</li>
+<li>How electric and magnetic fields interact</li>
+</ul>
+
+<p>
+These lectures reveal the deeper physics underlying circuit theory.
+</p>
+
 </div>
 
 
-<h2>Great Video Channels</h2>
+<h2>Video Channels & Lectures</h2>
 
 <div class="card">
 <h3>AlphaPhoenix</h3>
+
 <p>
-Fantastic visual explanations and thought experiments about electricity and electronics.
+AlphaPhoenix creates some of the best visual explanations of electricity available online. His videos often explore counterintuitive behaviors in circuits and challenge common misconceptions.
 </p>
 
 <button onclick="toggle('alpha')">Show Example</button>
@@ -212,10 +381,12 @@ Fantastic visual explanations and thought experiments about electricity and elec
 
 </div>
 
+
 <div class="card">
 <h3>Ben Eater</h3>
+
 <p>
-Deep explanations of digital electronics, signals and computer hardware built from scratch.
+Ben Eater is known for building computers and digital circuits from scratch while explaining every component in detail. His videos provide excellent intuition about signals, logic circuits and how hardware actually works.
 </p>
 
 <button onclick="toggle('ben')">Show Example</button>
@@ -226,10 +397,12 @@ Deep explanations of digital electronics, signals and computer hardware built fr
 
 </div>
 
+
 <div class="card">
 <h3>Walter Lewin MIT Lectures</h3>
+
 <p>
-Legendary MIT physics lectures famous for dramatic demonstrations of electromagnetic phenomena.
+Walter Lewin's MIT lectures are famous for dramatic demonstrations that make electromagnetic phenomena visually intuitive.
 </p>
 
 <button onclick="toggle('lewin')">Show Lecture</button>
@@ -242,7 +415,7 @@ Legendary MIT physics lectures famous for dramatic demonstrations of electromagn
 
 
 <footer>
-Built as a personal knowledge hub for mastering electricity and circuit intuition.
+This roadmap was designed as a personal knowledge hub for mastering electricity and circuit intuition through physics, engineering and experimentation.
 </footer>
 
 </div>
